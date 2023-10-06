@@ -3,8 +3,8 @@ package itemis.sales.model;
 import java.util.List;
 
 public class Invoice {
-     InvoiceItem[] items;
-     public static final int IMPORTED_TAX = 5;
+    InvoiceItem[] items;
+    public static final int IMPORTED_TAX = 5;
     public static final int NORMAL_TAX = 10;
 
     public Invoice(List<String> itemDescriptions) {
