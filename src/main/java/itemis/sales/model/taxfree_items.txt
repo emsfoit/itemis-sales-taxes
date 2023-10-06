@@ -1,0 +1,7 @@
+apple
+banana
+pizza
+hamburger
+chocolate
+pills
+book
