@@ -2,13 +2,29 @@
 
 This Java backend application solves a common sales tax calculation problem. It provides a single endpoint, `/getInvoice`, that accepts an array of strings, with each string representing an invoice item. Each invoice item contains information such as the product count, price, and name.
 
-## Usage
+## Required versions
+1. **Java**: Amazon Corretto 17.0.8.1 (JDK)
+2. **Gradle**: Version 8.2
+## Usage and Build Instructions
 
 To use this application, follow these steps:
 
-1. Clone this repository to your local machine.
-2. Install the required packages specified in the `build.gradle` file.
-3. Run the application using your preferred Java compiler (e.g., IntelliJ IDEA or any Java IDE).
+
+### Cloning the Repository
+   ```git clone https://github.com/emsfoit/itemis-sales-taxes.git```
+
+### Setting Up in IntelliJ IDEA
+
+1. **Open the project in IntelliJ IDEA.**
+
+2. **Import the Gradle Project:**
+
+   - Go to "File" -> "New" -> "Project from Existing Sources."
+   - Select the `build.gradle` or `build.gradle.kts` file in your project directory and click "OK."
+### Running the Application
+
+   - If your application has a main class that needs to be executed, locate and select it.
+   - Go to the "Run" menu and select "Run," or press `Shift + F10` (Windows/Linux) or `Ctrl + R` (Mac) to start your application.
 
 By default, the Spring server runs on port 8080, and you can access the `/getInvoice` endpoint at `http://localhost:8080/getInvoice`.
 
