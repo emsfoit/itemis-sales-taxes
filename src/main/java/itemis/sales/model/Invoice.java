@@ -18,26 +18,28 @@ public class Invoice {
     @Override
     public String toString() {
         StringBuilder overview = new StringBuilder();
-        float taxsum = 0;
-        float pricesum = 0;
-        for(InvoiceItem item : this.items) {
+        double taxsum = 0.0;
+        double pricesum = 0.0;
+        for (InvoiceItem item : this.items) {
             int tax = 0;
-            if(item.imported) {
+            if (item.imported) {
                 tax += IMPORTED_TAX;
             }
-            if(!item.taxFree) {
+            if (!item.taxFree) {
                 tax += NORMAL_TAX;
             }
-            float itemDueTax = item.count * (item.price * tax/100);
-            itemDueTax = (float) (Math.ceil(itemDueTax * 20) / 20.0);
-            float itemFinalPrice = item.count * (itemDueTax + item.price);
+
+            double itemDueTax = item.count * (item.price * tax / 100.0);
+            itemDueTax = Math.ceil(itemDueTax * 20) / 20.0;
+            double itemFinalPrice = item.count * (itemDueTax + item.price);
+
             pricesum += itemFinalPrice;
-            overview.append(item.name).append(": ").append(itemFinalPrice).append("\n");
+            overview.append(item.name).append(": ").append(String.format("%.2f", itemFinalPrice)).append("\n");
             taxsum += itemDueTax;
         }
 
-        overview.append("Sales Taxes: ").append(String.format("%.02f", taxsum)).append("\n");
-        overview.append("Total: ").append(String.format("%.02f", pricesum));
+        overview.append("Sales Taxes: ").append(String.format("%.2f", taxsum)).append("\n");
+        overview.append("Total: ").append(String.format("%.2f", pricesum));
         return overview.toString();
     }
 }

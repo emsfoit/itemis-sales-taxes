@@ -50,7 +50,7 @@ class InvoiceControllerTest {
         itemMap.put("items", items);
         String res = controller.getInvoice(itemMap);
 
-        String expected = "1 imported box of chocolates: 10.5\n" +
+        String expected = "1 imported box of chocolates: 10.50\n" +
                 "1 imported bottle of perfume: 54.65\n" +
                 "Sales Taxes: 7.65\n" +
                 "Total: 65.15";
